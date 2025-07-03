@@ -2,10 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Getting Started</title>
+    <title>Nip44 JS</title>
+    <script src="https://supertestnet.github.io/nip44js/nip44.js"></script>
   </head>
   <body>
-    <script src="./nip44.js"></script>
+    <h1>Nip44</h1>
+    <p>Open your browser console to see the magic.</p>
+    <p>There are 3 useful methods:</p>
+    <p>var conversation_key = nip44.utils.getConversationKey( privkey, pubkey )</p>
+    <p>var encrypted_message = nip44.encrypt( plaintext, conversation_key )</p>
+    <p>var decrypted_message = nip44.decrypt( encrypted_message, conversation_key )</p>
+    <p>The arguments for the first method (getConversationKey()) are both 32 byte hex strings; the first is the private key of the message sender or the message recipient, and the second is the public key of the message sender or the message recipient. E.g. if you are the sender you can encrypt the message using your own private key and your recipient's public key, and if you are the recipient you can decrypt the message using your own private key and the sender's public key.</p>
     <script>
       var plaintext = 'test';
       var conversation_key = nip44.utils.getConversationKey( '0000000000000000000000000000000000000000000000000000000000000001', 'c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5' );
