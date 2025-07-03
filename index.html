@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started</title>
+  </head>
+  <body>
+    <script src="./nip44.js"></script>
+    <script>
+      var plaintext = 'test';
+      var conversation_key = nip44.utils.getConversationKey( '0000000000000000000000000000000000000000000000000000000000000001', 'c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5' );
+      var emsg = nip44.encrypt( plaintext, conversation_key );
+      var dmsg = nip44.decrypt( emsg, conversation_key );
+      console.log( 'plaintext message:' );
+      console.log( plaintext );
+      console.log( 'conversation key:' );
+      console.log( conversation_key );
+      console.log( 'encrypted message:' );
+      console.log( emsg );
+      console.log( 'decrypted message:' );
+      console.log( dmsg );
+    </script>
+  </body>
+</html>
